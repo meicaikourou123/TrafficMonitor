@@ -10,4 +10,8 @@ public class FlinkJobApplication {
 		SpringApplication.run(FlinkJobApplication.class, args);
 	}
 
+
+
+
+
 }
