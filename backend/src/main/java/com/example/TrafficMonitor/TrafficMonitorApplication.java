@@ -1,17 +1,13 @@
-package com.example.flink_job;
+package com.example.TrafficMonitor;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class FlinkJobApplication {
+public class TrafficMonitorApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(FlinkJobApplication.class, args);
+		SpringApplication.run(TrafficMonitorApplication.class, args);
 	}
-
-
-
-
 
 }

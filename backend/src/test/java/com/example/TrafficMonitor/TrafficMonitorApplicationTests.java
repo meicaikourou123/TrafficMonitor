@@ -1,10 +1,10 @@
-package com.example.flink_job;
+package com.example.TrafficMonitor;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class FlinkJobApplicationTests {
+class TrafficMonitorApplicationTests {
 
 	@Test
 	void contextLoads() {
