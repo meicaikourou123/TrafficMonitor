@@ -41,6 +41,15 @@ services:
     command: taskmanager
     environment:
       - JOB_MANAGER_RPC_ADDRESS=flink-jobmanager
+  simulator:
+    build:
+      context: ./data-simulator
+    container_name: simulator
+    depends_on:
+      - kafka
+    environment:
+      KAFKA_SERVER: kafka:9092
+      KAFKA_TOPIC: traffic-stream
 
   postgres:
     image: postgres:15
@@ -56,3 +65,4 @@ services:
 
 volumes:
   pgdata:
+
