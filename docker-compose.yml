@@ -52,7 +52,8 @@ services:
       KAFKA_TOPIC: traffic-stream
 
   postgres:
-    image: postgres:15
+    image: imresamu/postgis:16-3.6-bookworm
+    platform: linux/arm64
     container_name: postgres
     ports:
       - "5432:5432"
