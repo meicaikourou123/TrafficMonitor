@@ -21,7 +21,7 @@ public class AverageSpeedAndCountAggregator implements AggregateFunction<
 
     @Override
     public Tuple2<Double, Long> add(TrafficEvent value, Tuple2<Double, Long> acc) {
-        return Tuple2.of(acc.f0 + value.speed, acc.f1 + 1);
+        return Tuple2.of(acc.f0 + value.getSpeed(), acc.f1 + 1);
     }
 
     @Override

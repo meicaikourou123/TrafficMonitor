@@ -7,7 +7,7 @@ from kafka import KafkaProducer
 
 KAFKA_SERVER = os.getenv('KAFKA_SERVER', 'kafka:9092')
 TOPIC = os.getenv('KAFKA_TOPIC', 'traffic-stream')
-
+#  here is the kafkaProducer as the simulator
 producer = KafkaProducer(
     bootstrap_servers=KAFKA_SERVER,
     value_serializer=lambda v: json.dumps(v).encode('utf-8')
