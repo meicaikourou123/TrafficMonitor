@@ -16,3 +16,4 @@ public class TrafficEventDeserializationSchema extends AbstractDeserializationSc
         return objectMapper.readValue(message, TrafficEvent.class);
     }
 }
+

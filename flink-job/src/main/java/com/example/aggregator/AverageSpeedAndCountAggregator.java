@@ -13,7 +13,6 @@ public class AverageSpeedAndCountAggregator implements AggregateFunction<
         Tuple3<String, Double, Long> // 输出：sensor_id, 平均速度, 数量
         > {
 
-
     @Override
     public Tuple2<Double, Long> createAccumulator() {
         return Tuple2.of(0.0, 0L);

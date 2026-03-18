@@ -3,20 +3,37 @@ package com.example.model;
 
 // define the data structure, including sensor_id, timestamp, speed
 
-import java.time.Instant;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import org.apache.flink.api.java.io.CsvOutputFormat;
 
 public class TrafficEvent {
+    @JsonProperty("sensor_id")
     private String sensorId;
-    private double speed;
-    private Instant timestamp;
+
+    @JsonProperty("timestamp")
+    private String timestamp;
+
+    @JsonProperty("latitude")
     private double latitude;
+
+    @JsonProperty("longitude")
     private double longitude;
+
+    @JsonProperty("avg_speed")
+    private double speed;  // unit km/h
+
+    @JsonProperty("vehicle_count")
     private int vehicleCount;
+
+    @JsonProperty("direction")
     private int direction;
+
+    // 加上 eventTimeMs 字段（不参与反序列化也没问题）
+    private long eventTimeMs;
     public TrafficEvent() {
     }
 
-    public TrafficEvent(String sensorId, double speed, Instant timestamp, double latitude, double longitude, int vehicleCount, int direction) {
+    public TrafficEvent(String sensorId, double speed, String timestamp, double latitude, double longitude, int vehicleCount, int direction) {
         this.sensorId = sensorId;
         this.speed = speed;
         this.timestamp = timestamp;
@@ -42,13 +59,17 @@ public class TrafficEvent {
         this.speed = speed;
     }
 
-    public Instant getTimestamp() {
+    public String getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(Instant timestamp) {
+    public void setTimestamp(String  timestamp) {
         this.timestamp = timestamp;
     }
+
+    public Long getEventTimeMs() { return eventTimeMs; }
+    public void setEventTimeMs(Long eventTimeMs) { this.eventTimeMs = eventTimeMs; }
+
 
     public double getLatitude() {
         return latitude;
